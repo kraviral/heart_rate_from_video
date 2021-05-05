@@ -8,7 +8,7 @@ face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
 
-cap = cv2.VideoCapture("Movie on 05-05-21 at 11.22 PM.export.mov")
+cap = cv2.VideoCapture("filename.mp4")
 
 mean_values = []
 
