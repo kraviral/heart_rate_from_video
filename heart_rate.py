@@ -90,3 +90,4 @@ PSDclean = PSD * indices
 fhat = fhat * indices
 ffilt = np.fft.ifft(fhat)
 plt.plot(ffilt)
+plt.show()
