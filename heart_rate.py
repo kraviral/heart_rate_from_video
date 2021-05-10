@@ -75,3 +75,18 @@ plt.plot(mean_values)
 plt.xlabel('frames')
 plt.ylabel('Mean value of pixels in ROI')
 plt.show()
+
+n = len(mean_values)
+fhat = np.fft.fft(mean_values, n)
+PSD = fhat * np.conj(fhat) / n
+freq = np.arange(n, dtype='int')
+L = np.arange(1, np.floor(n/2), dtype='int')
+plt.plot(freq[L], PSD[L])
+plt.xlim(freq[L[0]], freq[L[-1]])
+plt.show()
+
+indices = PSD > 0
+PSDclean = PSD * indices
+fhat = fhat * indices
+ffilt = np.fft.ifft(fhat)
+plt.plot(ffilt)
